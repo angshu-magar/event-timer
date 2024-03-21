@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+<h1>Are you sure you want to delete {{ event.name }} ?</h1>
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+</form>
+{% endblock body %}

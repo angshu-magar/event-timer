@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "style.css" %}">
+{% endblock head %}
+
+{% block body %}
+<div class="heading-container">
+    <div class="heading">
+        <h1>
+            Event Timer
+        </h1>
+    </div>
+</div>
+<div class="timer-container">
+    <h1 class="title">
+        Time until - {{ event.name }}
+    </h1>
+    <div class="timer">
+        <div class="timer-block">
+            12
+        </div>
+        <div class="timer-block">
+            12
+        </div>
+        <div class="timer-block">
+            12
+        </div>
+        <div class="timer-block">
+            12
+        </div>
+        <div class="timer-label">
+            days
+        </div>
+        <div class="timer-label">
+            hours
+        </div>
+        <div class="timer-label">
+            minutes
+        </div>
+        <div class="timer-label">
+            seconds
+        </div>
+    </div>
+    <div class="time">
+        {{ event.date }}
+    </div>
+</div>
+
+<div class="return-container">
+    <a href="{% url 'index_view' %}" class="return">
+        Return
+    </a>
+</div>
+{% endblock body %}
