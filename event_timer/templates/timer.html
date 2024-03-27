@@ -15,19 +15,25 @@
 </div>
 <div class="timer-container">
     <h1 class="title">
-        Time until - {{ event.name }}
+        Time
+        {% if event.is_expired %}
+            after 
+        {% else %}
+            until
+        {% endif %}
+            - {{ event.name }}
     </h1>
     <div class="timer">
-        <div class="timer-block">
+        <div class="timer-block" id="days">
             12
         </div>
-        <div class="timer-block">
+        <div class="timer-block" id="hours">
             12
         </div>
-        <div class="timer-block">
+        <div class="timer-block" id="minutes">
             12
         </div>
-        <div class="timer-block">
+        <div class="timer-block" id="seconds">
             12
         </div>
         <div class="timer-label">
@@ -43,8 +49,9 @@
             seconds
         </div>
     </div>
-    <div class="time">
-        {{ event.date }}
+    <div class="time" id="time">
+        {{ event.date | date:"M j, Y H:i:s" }}
+        {% comment %}{{ event.date }}{% endcomment %}
     </div>
 </div>
 
@@ -53,4 +60,6 @@
         Return
     </a>
 </div>
+
+<script src="{% static "timer.js" %}"></script>
 {% endblock body %}

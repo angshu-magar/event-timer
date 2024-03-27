@@ -11,3 +11,7 @@ class Event(models.Model):
     def rem_time(self):
         diff = self.date - timezone.now()
         return diff.days
+
+    @property
+    def is_expired(self) -> bool:
+        return timezone.now() > self.date
