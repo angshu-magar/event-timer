@@ -5,10 +5,10 @@
 
 body {
     background-color: #343434;
+    color: white;
 }
 
 .heading-container {
-    /*background-color: red;*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +24,6 @@ body {
 }
 
 .timer-container {
-    /*background-color: red;*/
     margin-top: 10rem;
     text-align: center;
     color: white;
@@ -32,7 +31,6 @@ body {
 }
 
 .timer {
-    /*background-color: red;*/
     display: grid;
     grid-template-columns: 5rem 5rem 5rem 5rem;
     grid-template-rows: auto auto;

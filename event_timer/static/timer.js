@@ -17,10 +17,10 @@ function update_countdown()
     let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((difference % (1000 * 60)) / 1000);
-    daysDiv.innerHTML = days;
-    hoursDiv.innerHTML = hours;
-    minutesDiv.innerHTML = minutes;
-    secondsDiv.innerHTML = seconds;
+    daysDiv.innerHTML = days < 10 ? "0" + days : days;
+    hoursDiv.innerHTML = hours < 10 ? "0" + hours : hours;
+    minutesDiv.innerHTML = minutes < 10 ? "0" + minutes : minutes;
+    secondsDiv.innerHTML = seconds < 10 ? "0" + seconds : seconds;
 }
 update_countdown();
 setInterval(update_countdown, 1000);

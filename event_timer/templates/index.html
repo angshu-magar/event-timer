@@ -1,10 +1,18 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static "style.css" %}">
 {% endblock head %}
 
 {% block body %}
-<h1>Event Timer</h1>
+<div class="heading-container">
+    <div class="heading">
+        <h1>
+            Event Timer
+        </h1>
+    </div>
+</div>
 
 <a href="{% url 'create_view' %}">Add Event</a>
 
