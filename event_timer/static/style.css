@@ -1,11 +1,10 @@
-/**{*/
-    /*padding: 0;*/
-    /*margin: 0;*/
-/*}*/
-
 body {
     background-color: #343434;
     color: white;
+}
+
+a {
+    color: orange;
 }
 
 .heading-container {
@@ -18,16 +17,14 @@ body {
     text-align: center;
     background-color: #b57a5d ;
     color: white;
-    height: 5rem;
-    width: 15vw;
+    padding: 2vh;
     border-radius: 1em;
 }
 
 .timer-container {
-    margin-top: 10rem;
+    margin-top: 10vh;
     text-align: center;
     color: white;
-    height: 100%;
 }
 
 .timer {
@@ -58,7 +55,7 @@ body {
 }
 
 .return-container{
-    margin-top: 3rem;
+    margin-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,14 +66,113 @@ body {
     background-color: red;
     color: white;
     font-size: 1.3rem;
-    height: 4rem;
-    width: 6rem;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    padding: 1em;
 }
 
 .return:hover{
     background-color: darkred;
+    cursor: pointer;
+}
+
+.event-list{
+    border:1px solid white;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 1vh;
+    text-align: center;
+}
+
+.create-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.create-block {
+    border: 1px solid white;
+    padding: 2em;
+    border-radius: 10%;
+}
+
+.create-title {
+    text-align: center;
+}
+
+.btn-save {
+    color: white;
+    background-color: red;
+    border-radius: 2vh;
+    padding: 2vh;
+    border: none;
+    font-size: large;
+    width: 100%;
+    font-family: inherit;
+}
+
+.btn-save:hover {
+    background-color: darkred;
+}
+
+.event-form > p{
+    display: grid;
+    grid-template-columns: 20% auto;
+    column-gap: 2vh;
+    font-size: large;
+}
+
+p > input {
+    background-color: #b57a5d;
+    border: none;
+    border-radius: 1vh;
+    color: white;
+    padding: 1vh;
+    font-family: inherit;
+}
+
+.delete-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-block {
+    border: 1px solid white;
+    border-radius : 2vh;
+    padding : 2vh;
+}
+
+.delete-block > form{
+    margin-top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-delete {
+    color: white;
+    background-color: red;
+    border-radius: 2vh;
+    padding: 2vh;
+    border: none;
+    font-size: large;
+    /*width: 100%;*/
+    font-family: inherit;
+    margin: 3vh;
+}
+
+.btn-delete:hover {
+    background-color: darkred;
+    cursor: pointer;
 }

@@ -10,6 +10,8 @@ class Event(models.Model):
     @property
     def rem_time(self):
         diff = self.date - timezone.now()
+        if self.date < timezone.now():
+            diff = timezone.now() - self.date
         return diff.days
 
     @property

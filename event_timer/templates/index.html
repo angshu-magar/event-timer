@@ -19,30 +19,46 @@
 <h2>List of Events</h2>
 
 <h3>Upcoming Events</h3>
-<ul>
+<table class="event-list">
+    <tr>
+        <th>Event Name</th>
+        <th>Days remaining</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
     {% for event in upcoming_event_list %}
-    <li>
-        <a href="{% url 'timer_view' event_pk=event.id %}">
-        {{ event.name }}
-        </a>
-        {{ event.rem_time }} days remaining
-        <a href="{% url 'update_view' event_pk=event.id %}">Edit</a>
-        <a href="{% url 'delete_view' event_pk=event.id %}">Delete</a>
-    </li>
+    <tr>
+        <td>
+            <a href="{% url 'timer_view' event_pk=event.id %}">
+            {{ event.name }}
+            </a>
+        </td>
+        <td>{{ event.rem_time }} days remaining</td>
+        <td><a href="{% url 'update_view' event_pk=event.id %}">Edit</a></td>
+        <td><a href="{% url 'delete_view' event_pk=event.id %}">Delete</a></td>
+    </tr>
     {% endfor %}
-</ul>
+</table>
 
 <h3>Completed Events</h3>
-<ul>
+<table class="event-list">
+    <tr>
+        <th>Event Name</th>
+        <th>Days ago</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
     {% for event in completed_event_list %}
-    <li>
-        <a href="{% url 'timer_view' event_pk=event.id %}">
-        {{ event.name }}
-        </a>
-        {{ event.date }}
-        <a href="{% url 'update_view' event_pk=event.id %}">Edit</a>
-        <a href="{% url 'delete_view' event_pk=event.id %}">Delete</a>
-    </li>
+    <tr>
+        <td>
+            <a href="{% url 'timer_view' event_pk=event.id %}">
+            {{ event.name }}
+            </a>
+        </td>
+        <td>{{ event.rem_time }} days ago</td>
+        <td><a href="{% url 'update_view' event_pk=event.id %}">Edit</a></td>
+        <td><a href="{% url 'delete_view' event_pk=event.id %}">Delete</a></td>
+    </tr>
     {% endfor %}
-</ul>
+</table>
 {% endblock body %}

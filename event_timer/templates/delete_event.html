@@ -1,12 +1,33 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static "style.css" %}">
+<style>
+*{
+    padding : 0;
+    margin: 0;
+}
+</style>
 {% endblock head %}
 
 {% block body %}
-<h1>Are you sure you want to delete {{ event.name }} ?</h1>
-<form method="post">
-    {% csrf_token %}
-    <input type="submit" value="Delete">
-</form>
+
+<div class="delete-container">
+    <div class="delete-block">
+        <h1>Are you sure you want to delete "{{ event.name }}"?</h1>
+        <form method="post">
+            {% csrf_token %}
+            <input type="submit" value="Yes" class="btn-delete">
+            <input type="hidden" value="{% url 'index_view' %}" id="no-link">
+            <input type="button" value="No" class="btn-delete" id="delete">
+        </form>
+    </div>
+</div>
+    <script>
+        document.getElementById("delete").addEventListener("click", function () {
+            window.location.href = document.getElementById("no-link").value;
+        });
+    </script>
+
 {% endblock body %}
